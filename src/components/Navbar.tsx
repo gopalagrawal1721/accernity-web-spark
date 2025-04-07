@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code, FileText } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,8 +29,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-display font-bold">
-            <span className="gradient-text">Accernity.</span>
+          <Link to="/" className="text-2xl font-display font-bold flex items-center">
+            <div className="mr-2 flex items-center">
+              <Code className="text-brand-blue" size={24} />
+              <span className="text-brand-purple mx-1">&</span>
+              <FileText className="text-brand-blue" size={24} />
+            </div>
+            <span className="gradient-text">Code n Content</span>
           </Link>
 
           {/* Desktop Navigation */}

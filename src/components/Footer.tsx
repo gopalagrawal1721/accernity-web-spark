@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Code, FileText } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,8 +9,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <Link to="/" className="text-2xl font-display font-bold">
-              <span className="gradient-text">Accernity.</span>
+            <Link to="/" className="text-2xl font-display font-bold flex items-center">
+              <div className="mr-2 flex items-center">
+                <Code className="text-brand-blue" size={20} />
+                <span className="text-brand-purple mx-1">&</span>
+                <FileText className="text-brand-blue" size={20} />
+              </div>
+              <span className="gradient-text">Code n Content</span>
             </Link>
             <p className="text-gray-600 mt-2">
               Transforming businesses through innovative digital marketing and web development solutions.
@@ -111,7 +116,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-2 text-brand-blue" />
-                <span className="text-gray-600">hello@accernity.com</span>
+                <span className="text-gray-600">hello@codencontentent.com</span>
               </li>
             </ul>
           </div>
@@ -120,7 +125,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-600 text-sm">
-              &copy; {new Date().getFullYear()} Accernity. All rights reserved.
+              &copy; {new Date().getFullYear()} Code n Content. All rights reserved.
             </p>
             <div className="flex space-x-4 mt-4 md:mt-0">
               <Link to="/terms" className="text-gray-600 hover:text-brand-blue transition-colors text-sm">

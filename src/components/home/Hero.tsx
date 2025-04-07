@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Code, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -9,11 +9,18 @@ const Hero = () => {
       <div className="absolute inset-0 hero-pattern"></div>
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center mb-4">
+            <div className="flex items-center bg-white p-3 rounded-full shadow-lg">
+              <Code className="text-brand-blue" size={32} />
+              <span className="text-brand-purple mx-2 text-xl font-bold">&</span>
+              <FileText className="text-brand-blue" size={32} />
+            </div>
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in">
             Transform Your Digital <span className="gradient-text">Presence</span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 mx-auto max-w-2xl animate-slide-up opacity-0" style={{ animationDelay: '300ms' }}>
-            We craft stunning websites and implement powerful digital marketing strategies 
+            At Code n Content, we craft stunning websites and implement powerful digital marketing strategies 
             that drive growth and convert visitors into loyal customers.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-slide-up opacity-0" style={{ animationDelay: '600ms' }}>
