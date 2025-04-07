@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Code, FileText } from "lucide-react";
+import { Menu, X, Code, FileText, Zap } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,12 +30,13 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link to="/" className="text-2xl font-display font-bold flex items-center">
-            <div className="mr-2 flex items-center">
-              <Code className="text-brand-blue" size={24} />
-              <span className="text-brand-purple mx-1">&</span>
-              <FileText className="text-brand-blue" size={24} />
+            <div className="relative mr-3 flex items-center justify-center bg-gradient-to-r from-brand-blue to-brand-purple p-2 rounded-lg transform rotate-12 shadow-lg">
+              <div className="absolute inset-0 bg-white opacity-20 rounded-lg"></div>
+              <Code className="text-white z-10" size={20} />
+              <Zap className="text-white z-10 mx-0.5" size={16} />
+              <FileText className="text-white z-10" size={20} />
             </div>
-            <span className="gradient-text">Code n Content</span>
+            <span className="font-montserrat font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-purple tracking-tight">Code n Content</span>
           </Link>
 
           {/* Desktop Navigation */}

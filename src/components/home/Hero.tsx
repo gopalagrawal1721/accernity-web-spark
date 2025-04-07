@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Code, FileText } from "lucide-react";
+import { ArrowRight, Code, FileText, Zap, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -9,14 +9,19 @@ const Hero = () => {
       <div className="absolute inset-0 hero-pattern"></div>
       <div className="container mx-auto px-4 md:px-6 relative">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center mb-4">
-            <div className="flex items-center bg-white p-3 rounded-full shadow-lg">
-              <Code className="text-brand-blue" size={32} />
-              <span className="text-brand-purple mx-2 text-xl font-bold">&</span>
-              <FileText className="text-brand-blue" size={32} />
+          <div className="flex items-center justify-center mb-8">
+            <div className="flex items-center justify-center bg-gradient-to-r from-brand-blue to-brand-purple p-6 rounded-xl shadow-2xl transform rotate-6 hover:rotate-0 transition-all duration-300">
+              <div className="absolute inset-0 bg-white opacity-10 rounded-xl"></div>
+              <Code className="text-white" size={36} />
+              <div className="relative mx-1">
+                <Zap className="text-white absolute -top-2 left-1/2 transform -translate-x-1/2" size={14} />
+                <span className="text-white font-montserrat font-bold text-2xl">n</span>
+                <Sparkles className="text-white absolute -bottom-2 left-1/2 transform -translate-x-1/2" size={14} />
+              </div>
+              <FileText className="text-white" size={36} />
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6 animate-fade-in">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-montserrat font-extrabold leading-tight mb-6 animate-fade-in">
             Transform Your Digital <span className="gradient-text">Presence</span>
           </h1>
           <p className="text-xl text-gray-600 mb-10 mx-auto max-w-2xl animate-slide-up opacity-0" style={{ animationDelay: '300ms' }}>

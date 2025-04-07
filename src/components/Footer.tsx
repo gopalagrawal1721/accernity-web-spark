@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Code, FileText } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Code, FileText, Zap } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -10,12 +10,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Link to="/" className="text-2xl font-display font-bold flex items-center">
-              <div className="mr-2 flex items-center">
-                <Code className="text-brand-blue" size={20} />
-                <span className="text-brand-purple mx-1">&</span>
-                <FileText className="text-brand-blue" size={20} />
+              <div className="relative mr-3 flex items-center justify-center bg-gradient-to-r from-brand-blue to-brand-purple p-2 rounded-lg shadow-lg">
+                <div className="absolute inset-0 bg-white opacity-20 rounded-lg"></div>
+                <Code className="text-white z-10" size={18} />
+                <Zap className="text-white z-10 mx-0.5" size={14} />
+                <FileText className="text-white z-10" size={18} />
               </div>
-              <span className="gradient-text">Code n Content</span>
+              <span className="font-montserrat font-bold text-transparent bg-clip-text bg-gradient-to-r from-brand-blue to-brand-purple">Code n Content</span>
             </Link>
             <p className="text-gray-600 mt-2">
               Transforming businesses through innovative digital marketing and web development solutions.
