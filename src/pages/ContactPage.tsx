@@ -103,9 +103,8 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold">Visit Our Office</h3>
                       <p className="text-gray-600 mt-1">
-                        123 Digital Avenue, Suite 456<br />
-                        San Francisco, CA 94105<br />
-                        United States
+                      4th Main, HSR Layout<br />
+                      Hosapalya, Bengaluru, Karnataka (560068)
                       </p>
                     </div>
                   </div>

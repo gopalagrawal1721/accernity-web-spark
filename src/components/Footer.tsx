@@ -108,7 +108,8 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-2 text-brand-blue mt-1" />
                 <span className="text-gray-600">
-                  123 Digital Avenue, Tech City, TC 10101
+                4th Main, HSR Layout<br />
+                Hosapalya, Bengaluru, Karnataka (560068)
                 </span>
               </li>
               <li className="flex items-center">
