@@ -63,8 +63,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Our Office</h4>
                   <p className="text-gray-600">
-                    123 Digital Avenue<br />
-                    Tech City, TC 10101
+                    4th Main, HSR Layout<br />
+                    Hosapalya, Bengaluru, Karnataka (560068)
                   </p>
                 </div>
               </div>
