@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 
 const LogoPage = () => {
   const downloadSVG = () => {
-    // SVG string definition
+    // SVG string definition matching the UI logo
     const svgString = `
       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
         <defs>
@@ -18,13 +18,11 @@ const LogoPage = () => {
         </defs>
         <rect x="40" y="40" width="120" height="120" rx="10" fill="url(#logo-gradient)" />
         <rect x="40" y="40" width="120" height="120" rx="10" fill="white" fill-opacity="0.2" />
-        <g transform="translate(60, 60)" fill="white">
-          <!-- Code icon -->
-          <path d="M16 18l8-8-8-8M8 6l-8 8 8 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- Zap icon -->
-          <path d="M40 6l-4 8h8l-4 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <!-- FileText icon -->
-          <path d="M74 16v-4a2 2 0 0 0-2-2h-8.93a2 2 0 0 1-1.66-.9l-.82-1.2a2 2 0 0 0-1.66-.9H52a2 2 0 0 0-2 2v12m0 0v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-6M60 12v2M60 18v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <g transform="translate(70, 70)" fill="white">
+          <path d="M0 10l4 -4 -4 -4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M-6 2l-4 4 4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M20 -4l-2 4h4l-2 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M37 3v-2a1 1 0 0 0 -1 -1h-4.5a1 1 0 0 1 -0.8 -0.4l-0.4 -0.6a1 1 0 0 0 -0.8 -0.4h-3.5a1 1 0 0 0 -1 1v6m0 0v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1 -1v-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </g>
       </svg>
     `;
@@ -44,28 +42,29 @@ const LogoPage = () => {
     // Create a new Image object
     const img = new Image();
     
-    // SVG data
-    const svgData = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+    // SVG data - using the same SVG as displayed in UI
+    const svgString = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
         <defs>
           <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#4361ee" />
             <stop offset="100%" stop-color="#7209b7" />
           </linearGradient>
         </defs>
-        <rect x="10" y="10" width="80" height="80" rx="10" fill="url(#logo-gradient)" />
-        <rect x="10" y="10" width="80" height="80" rx="10" fill="white" fill-opacity="0.2" />
-        <g transform="translate(22, 22) scale(0.7)" fill="white">
-          <path d="M16 18l8-8-8-8M8 6l-8 8 8 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M40 6l-4 8h8l-4 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M74 16v-4a2 2 0 0 0-2-2h-8.93a2 2 0 0 1-1.66-.9l-.82-1.2a2 2 0 0 0-1.66-.9H52a2 2 0 0 0-2 2v12m0 0v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-6M60 12v2M60 18v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <rect x="40" y="40" width="120" height="120" rx="10" fill="url(#logo-gradient)" />
+        <rect x="40" y="40" width="120" height="120" rx="10" fill="white" fill-opacity="0.2" />
+        <g transform="translate(70, 70)" fill="white">
+          <path d="M0 10l4 -4 -4 -4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M-6 2l-4 4 4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M20 -4l-2 4h4l-2 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M37 3v-2a1 1 0 0 0 -1 -1h-4.5a1 1 0 0 1 -0.8 -0.4l-0.4 -0.6a1 1 0 0 0 -0.8 -0.4h-3.5a1 1 0 0 0 -1 1v6m0 0v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1 -1v-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </g>
-        <text x="110" y="60" font-family="Montserrat, sans-serif" font-weight="700" font-size="24" fill="url(#logo-gradient)">Code n Content</text>
+        <text x="40" y="180" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="url(#logo-gradient)">Code n Content</text>
       </svg>
     `;
     
     // Convert the SVG to a data URL
-    const svgBlob = new Blob([svgData], { type: 'image/svg+xml' });
+    const svgBlob = new Blob([svgString], { type: 'image/svg+xml' });
     const svgUrl = URL.createObjectURL(svgBlob);
     
     // Create canvas element
@@ -73,8 +72,8 @@ const LogoPage = () => {
     const ctx = canvas.getContext('2d');
     
     // Set canvas dimensions
-    canvas.width = 400;
-    canvas.height = 100;
+    canvas.width = 200;
+    canvas.height = 200;
     
     // When the image is loaded, draw it on canvas and convert to PNG
     img.onload = function() {
