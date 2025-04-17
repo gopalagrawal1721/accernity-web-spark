@@ -7,23 +7,41 @@ import Footer from "@/components/Footer";
 
 const LogoPage = () => {
   const downloadSVG = () => {
-    // SVG string definition matching the UI logo
+    // SVG string definition that exactly matches the UI logo
     const svgString = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240">
         <defs>
           <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#4361ee" />
             <stop offset="100%" stop-color="#7209b7" />
           </linearGradient>
         </defs>
-        <rect x="40" y="40" width="120" height="120" rx="10" fill="url(#logo-gradient)" />
-        <rect x="40" y="40" width="120" height="120" rx="10" fill="white" fill-opacity="0.2" />
-        <g transform="translate(70, 70)" fill="white">
-          <path d="M0 10l4 -4 -4 -4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M-6 2l-4 4 4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M20 -4l-2 4h4l-2 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M37 3v-2a1 1 0 0 0 -1 -1h-4.5a1 1 0 0 1 -0.8 -0.4l-0.4 -0.6a1 1 0 0 0 -0.8 -0.4h-3.5a1 1 0 0 0 -1 1v6m0 0v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1 -1v-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        
+        <!-- Logo box with gradient -->
+        <g transform="translate(100, 50)">
+          <rect width="60" height="60" rx="8" fill="url(#logo-gradient)" />
+          <rect width="60" height="60" rx="8" fill="white" fill-opacity="0.2" />
+          
+          <!-- Code icon -->
+          <g transform="translate(10, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="10,0 0,10 10,20" />
+            <polyline points="0,10 10,10" />
+          </g>
+          
+          <!-- Zap icon -->
+          <g transform="translate(25, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="5,0 0,10 5,10 0,20" />
+          </g>
+          
+          <!-- File icon -->
+          <g transform="translate(35, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14,0 L14,20 L0,20 L0,0 Z" />
+            <path d="M3,5 L11,5 M3,10 L11,10 M3,15 L11,15" />
+          </g>
         </g>
+        
+        <!-- Text "Code n Content" -->
+        <text x="150" y="160" font-family="Montserrat, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="url(#logo-gradient)">Code n Content</text>
       </svg>
     `;
     
@@ -42,24 +60,41 @@ const LogoPage = () => {
     // Create a new Image object
     const img = new Image();
     
-    // SVG data - using the same SVG as displayed in UI
+    // SVG data - using the exact same SVG as defined above
     const svgString = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+      <svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240">
         <defs>
           <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
             <stop offset="0%" stop-color="#4361ee" />
             <stop offset="100%" stop-color="#7209b7" />
           </linearGradient>
         </defs>
-        <rect x="40" y="40" width="120" height="120" rx="10" fill="url(#logo-gradient)" />
-        <rect x="40" y="40" width="120" height="120" rx="10" fill="white" fill-opacity="0.2" />
-        <g transform="translate(70, 70)" fill="white">
-          <path d="M0 10l4 -4 -4 -4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M-6 2l-4 4 4 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M20 -4l-2 4h4l-2 4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          <path d="M37 3v-2a1 1 0 0 0 -1 -1h-4.5a1 1 0 0 1 -0.8 -0.4l-0.4 -0.6a1 1 0 0 0 -0.8 -0.4h-3.5a1 1 0 0 0 -1 1v6m0 0v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1 -1v-3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        
+        <!-- Logo box with gradient -->
+        <g transform="translate(100, 50)">
+          <rect width="60" height="60" rx="8" fill="url(#logo-gradient)" />
+          <rect width="60" height="60" rx="8" fill="white" fill-opacity="0.2" />
+          
+          <!-- Code icon -->
+          <g transform="translate(10, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="10,0 0,10 10,20" />
+            <polyline points="0,10 10,10" />
+          </g>
+          
+          <!-- Zap icon -->
+          <g transform="translate(25, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="5,0 0,10 5,10 0,20" />
+          </g>
+          
+          <!-- File icon -->
+          <g transform="translate(35, 20)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14,0 L14,20 L0,20 L0,0 Z" />
+            <path d="M3,5 L11,5 M3,10 L11,10 M3,15 L11,15" />
+          </g>
         </g>
-        <text x="40" y="180" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="url(#logo-gradient)">Code n Content</text>
+        
+        <!-- Text "Code n Content" -->
+        <text x="150" y="160" font-family="Montserrat, sans-serif" font-weight="700" font-size="20" text-anchor="middle" fill="url(#logo-gradient)">Code n Content</text>
       </svg>
     `;
     
@@ -72,8 +107,8 @@ const LogoPage = () => {
     const ctx = canvas.getContext('2d');
     
     // Set canvas dimensions
-    canvas.width = 200;
-    canvas.height = 200;
+    canvas.width = 300;
+    canvas.height = 240;
     
     // When the image is loaded, draw it on canvas and convert to PNG
     img.onload = function() {
