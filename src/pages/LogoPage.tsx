@@ -1,20 +1,13 @@
 
-import React, { useRef } from 'react';
+import React from 'react';
 import { Code, FileText, Zap, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const LogoPage = () => {
-  const logoRef = useRef<HTMLDivElement>(null);
-
   const downloadSVG = () => {
-    if (!logoRef.current) return;
-    
-    // Clone the logo element
-    const svgElement = logoRef.current.cloneNode(true) as HTMLDivElement;
-    
-    // Convert to SVG string
+    // SVG string definition
     const svgString = `
       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
         <defs>
@@ -48,47 +41,75 @@ const LogoPage = () => {
   };
 
   const downloadPNG = () => {
-    if (!logoRef.current) return;
-
-    // Create a canvas element
+    // Create a new Image object
+    const img = new Image();
+    
+    // SVG data
+    const svgData = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="100" viewBox="0 0 400 100">
+        <defs>
+          <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#4361ee" />
+            <stop offset="100%" stop-color="#7209b7" />
+          </linearGradient>
+        </defs>
+        <rect x="10" y="10" width="80" height="80" rx="10" fill="url(#logo-gradient)" />
+        <rect x="10" y="10" width="80" height="80" rx="10" fill="white" fill-opacity="0.2" />
+        <g transform="translate(22, 22) scale(0.7)" fill="white">
+          <path d="M16 18l8-8-8-8M8 6l-8 8 8 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M40 6l-4 8h8l-4 8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M74 16v-4a2 2 0 0 0-2-2h-8.93a2 2 0 0 1-1.66-.9l-.82-1.2a2 2 0 0 0-1.66-.9H52a2 2 0 0 0-2 2v12m0 0v6a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-6M60 12v2M60 18v2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </g>
+        <text x="110" y="60" font-family="Montserrat, sans-serif" font-weight="700" font-size="24" fill="url(#logo-gradient)">Code n Content</text>
+      </svg>
+    `;
+    
+    // Convert the SVG to a data URL
+    const svgBlob = new Blob([svgData], { type: 'image/svg+xml' });
+    const svgUrl = URL.createObjectURL(svgBlob);
+    
+    // Create canvas element
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-    const rect = logoRef.current.getBoundingClientRect();
     
     // Set canvas dimensions
-    canvas.width = rect.width * 2; // Multiply for better resolution
-    canvas.height = rect.height * 2;
+    canvas.width = 400;
+    canvas.height = 100;
     
-    // Create an image from the SVG
-    const img = new Image();
-    const svgData = `<svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}">
-      <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-          ${logoRef.current.outerHTML}
-        </div>
-      </foreignObject>
-    </svg>`;
-    
-    const blob = new Blob([svgData], { type: 'image/svg+xml' });
-    const url = URL.createObjectURL(blob);
-    
+    // When the image is loaded, draw it on canvas and convert to PNG
     img.onload = function() {
       if (!ctx) return;
       
+      // Draw the image on canvas
       ctx.drawImage(img, 0, 0);
-      URL.revokeObjectURL(url);
       
-      // Convert canvas to PNG and download
-      const pngUrl = canvas.toDataURL('image/png');
-      const link = document.createElement('a');
-      link.href = pngUrl;
-      link.download = 'code-n-content-logo.png';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Release the object URL
+      URL.revokeObjectURL(svgUrl);
+      
+      try {
+        // Convert to PNG and download
+        const pngUrl = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = pngUrl;
+        link.download = 'code-n-content-logo.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } catch (e) {
+        console.error('Error generating PNG:', e);
+        alert('Could not generate PNG. Using fallback method...');
+        
+        // Fallback method - open SVG in new tab for screenshot
+        const fallbackLink = document.createElement('a');
+        fallbackLink.href = svgUrl;
+        fallbackLink.target = '_blank';
+        fallbackLink.click();
+      }
     };
     
-    img.src = url;
+    // Set crossOrigin to anonymous
+    img.crossOrigin = 'anonymous';
+    img.src = svgUrl;
   };
 
   return (
@@ -100,11 +121,7 @@ const LogoPage = () => {
           
           <div className="flex flex-col items-center gap-8">
             <div className="p-10 border rounded-lg shadow-lg">
-              <div 
-                ref={logoRef} 
-                className="flex items-center justify-center" 
-                style={{transform: "scale(2)", transformOrigin: "center", margin: "40px 0"}}
-              >
+              <div className="flex items-center justify-center" style={{transform: "scale(2)", transformOrigin: "center", margin: "40px 0"}}>
                 <div className="relative mr-3 flex items-center justify-center bg-gradient-to-r from-brand-blue to-brand-purple p-2 rounded-lg shadow-lg">
                   <div className="absolute inset-0 bg-white opacity-20 rounded-lg"></div>
                   <Code className="text-white z-10" size={18} />
