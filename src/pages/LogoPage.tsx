@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { Code, FileText, Zap, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,9 +8,8 @@ import { toast } from "sonner";
 const LogoPage = () => {
   const logoRef = useRef<HTMLDivElement>(null);
 
-  const downloadSVG = () => {
-    // Create an SVG that EXACTLY matches what is shown in the UI
-    const svgString = `
+  const createExactLogoSVG = () => {
+    return `
       <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
         <defs>
           <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -20,35 +18,39 @@ const LogoPage = () => {
           </linearGradient>
         </defs>
         
-        <!-- Logo box with gradient -->
-        <g transform="translate(150, 50)">
-          <rect width="100" height="100" rx="12" fill="url(#logo-gradient)" />
-          <rect width="100" height="100" rx="12" fill="white" fill-opacity="0.2" />
+        <!-- Logo container -->
+        <g transform="translate(130, 50)">
+          <!-- Logo box with gradient -->
+          <rect width="60" height="60" rx="8" fill="url(#logo-gradient)" />
+          <rect width="60" height="60" rx="8" fill="white" fill-opacity="0.2" />
           
           <!-- Code icon -->
-          <g transform="translate(15, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <g transform="translate(10, 18) scale(0.6)" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="16,0 0,16 16,32" />
             <polyline points="0,16 16,16" />
           </g>
           
           <!-- Zap icon -->
-          <g transform="translate(40, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="8,0 0,16 8,16 0,32" />
+          <g transform="translate(24, 18) scale(0.6)" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13,0 0,16 13,16 0,32" />
           </g>
           
           <!-- File icon -->
-          <g transform="translate(60, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <g transform="translate(36, 18) scale(0.6)" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M24,0 L24,32 L0,32 L0,0 Z" />
             <path d="M5,8 L19,8 M5,16 L19,16 M5,24 L19,24" />
           </g>
         </g>
         
         <!-- Text "Code n Content" -->
-        <text x="200" y="200" font-family="Montserrat, sans-serif" font-weight="700" font-size="32" text-anchor="middle" fill="url(#logo-gradient)">Code n Content</text>
+        <text x="200" y="170" font-family="Montserrat, sans-serif" font-weight="700" font-size="24" text-anchor="middle" fill="url(#logo-gradient)">Code n Content</text>
       </svg>
     `;
+  };
+
+  const downloadSVG = () => {
+    const svgString = createExactLogoSVG();
     
-    // Create download link
     const blob = new Blob([svgString], { type: 'image/svg+xml' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
@@ -57,16 +59,15 @@ const LogoPage = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    URL.revokeObjectURL(url);
     toast.success("SVG logo downloaded successfully!");
   };
 
   const downloadPNG = () => {
-    // Create a high-resolution canvas
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     
-    // Set high resolution
-    const scale = 3; // 3x resolution for clarity
+    const scale = 4;
     canvas.width = 400 * scale;
     canvas.height = 300 * scale;
     
@@ -75,66 +76,26 @@ const LogoPage = () => {
       return;
     }
     
-    // Scale the canvas for high resolution
     ctx.scale(scale, scale);
     
-    // Fill with transparent background
     ctx.fillStyle = 'rgba(0,0,0,0)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     
-    // Create the SVG image
-    const svgString = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-        <defs>
-          <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#4361ee" />
-            <stop offset="100%" stop-color="#7209b7" />
-          </linearGradient>
-        </defs>
-        
-        <!-- Logo box with gradient -->
-        <g transform="translate(150, 50)">
-          <rect width="100" height="100" rx="12" fill="url(#logo-gradient)" />
-          <rect width="100" height="100" rx="12" fill="white" fill-opacity="0.2" />
-          
-          <!-- Code icon -->
-          <g transform="translate(15, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16,0 0,16 16,32" />
-            <polyline points="0,16 16,16" />
-          </g>
-          
-          <!-- Zap icon -->
-          <g transform="translate(40, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="8,0 0,16 8,16 0,32" />
-          </g>
-          
-          <!-- File icon -->
-          <g transform="translate(60, 30)" fill="none" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M24,0 L24,32 L0,32 L0,0 Z" />
-            <path d="M5,8 L19,8 M5,16 L19,16 M5,24 L19,24" />
-          </g>
-        </g>
-        
-        <!-- Text "Code n Content" -->
-        <text x="200" y="200" font-family="Montserrat, sans-serif" font-weight="700" font-size="32" text-anchor="middle" fill="url(#logo-gradient)">Code n Content</text>
-      </svg>
-    `;
+    const svgString = createExactLogoSVG();
     
-    // Create an Image object
     const img = new Image();
     img.onload = function() {
-      // Draw the SVG image onto the canvas
       ctx.drawImage(img, 0, 0, 400, 300);
       
       try {
-        // Convert to PNG and download
-        const pngUrl = canvas.toDataURL('image/png');
+        const pngUrl = canvas.toDataURL('image/png', 1.0);
         const link = document.createElement('a');
         link.href = pngUrl;
         link.download = 'code-n-content-logo.png';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        URL.revokeObjectURL(pngUrl);
         toast.success("High resolution PNG logo downloaded successfully!");
       } catch (e) {
         console.error('Error generating PNG:', e);
@@ -142,12 +103,27 @@ const LogoPage = () => {
       }
     };
     
-    // Create a Blob from the SVG string
     const svgBlob = new Blob([svgString], {type: 'image/svg+xml'});
     const url = URL.createObjectURL(svgBlob);
     
-    // Set the source of the image
     img.src = url;
+    
+    img.onload = function() {
+      ctx.drawImage(img, 0, 0, 400, 300);
+      try {
+        const pngUrl = canvas.toDataURL('image/png', 1.0);
+        const link = document.createElement('a');
+        link.href = pngUrl;
+        link.download = 'code-n-content-logo.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      } catch (e) {
+        console.error('Error generating PNG:', e);
+        toast.error("Could not generate PNG. Please try again.");
+      }
+    };
   };
 
   return (
