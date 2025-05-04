@@ -80,8 +80,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Email Us</h3>
-                      <p className="text-gray-600 mt-1">info@accernity.com</p>
-                      <p className="text-gray-600">support@accernity.com</p>
+                      <p className="text-gray-600">Chander@codencontent.com</p>
+                      <p className="text-gray-600">Gopal@codencontent.com</p>
                     </div>
                   </div>
                   
@@ -91,8 +91,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h3 className="text-lg font-semibold">Call Us</h3>
-                      <p className="text-gray-600 mt-1">+1 (555) 123-4567</p>
-                      <p className="text-gray-600">+1 (555) 987-6543</p>
+                      <p className="text-gray-600">8374672687</p>
+                      <p className="text-gray-600">8969912581</p>
                     </div>
                   </div>
                   
@@ -103,7 +103,7 @@ const ContactPage = () => {
                     <div>
                       <h3 className="text-lg font-semibold">Visit Our Office</h3>
                       <p className="text-gray-600 mt-1">
-                      4th Main, HSR Layout<br />
+                      HSR Layout<br />
                       Hosapalya, Bengaluru, Karnataka (560068)
                       </p>
                     </div>
@@ -117,8 +117,7 @@ const ContactPage = () => {
                       <h3 className="text-lg font-semibold">Business Hours</h3>
                       <p className="text-gray-600 mt-1">
                         Monday - Friday: 9:00 AM - 6:00 PM<br />
-                        Saturday: 10:00 AM - 2:00 PM<br />
-                        Sunday: Closed
+                        Saturday - Sunday: Closed<br />
                       </p>
                     </div>
                   </div>
@@ -218,14 +217,20 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="py-10">
+    <section className="py-10">
           <div className="container mx-auto px-4 md:px-6">
-            <div className="bg-gray-200 rounded-xl h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-gray-600">Google Maps Embed would go here</p>
-                <p className="text-sm text-gray-500 mt-2">(Replace with actual Google Maps embed in production)</p>
-              </div>
+            <div className="bg-white shadow-lg rounded-xl overflow-hidden h-[400px]">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12345.67890!2d-73.9857!3d40.7484!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40uNzQ4NCwgLTczLjk4NTc!5e0!3m2!1sen!2sus!4v1587567234567!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Google Maps"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </section>

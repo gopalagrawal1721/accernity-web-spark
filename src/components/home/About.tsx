@@ -13,8 +13,8 @@ const About = () => {
               We Help Businesses <span className="gradient-text">Grow</span> in the Digital World
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              At Accernity, we're passionate about helping businesses succeed online. 
-              With over 10 years of experience and a team of skilled professionals, 
+              At Code N Content, we're passionate about helping businesses succeed online. 
+              With over 4 years of experience and a team of skilled professionals, 
               we provide end-to-end digital solutions tailored to your specific needs.
             </p>
             
@@ -38,7 +38,7 @@ const About = () => {
             </div>
             
             <Button asChild className="gradient-bg text-white rounded-full py-6 px-8">
-              <Link to="/about">
+              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>
                 Learn More About Us
               </Link>
             </Button>

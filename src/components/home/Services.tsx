@@ -57,7 +57,7 @@ const Services = () => {
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <Link 
-                  to="/services" 
+                  to="/services" onClick={() => window.scrollTo(0, 0)} 
                   className="inline-flex items-center font-medium text-brand-blue hover:text-brand-purple transition-colors"
                 >
                   Learn more <ArrowRight className="ml-1 h-4 w-4" />
@@ -69,7 +69,7 @@ const Services = () => {
 
         <div className="text-center mt-12">
           <Link 
-            to="/services" 
+            to="/services" onClick={() => window.scrollTo(0, 0)}
             className="inline-flex items-center text-lg font-medium text-brand-blue hover:text-brand-purple transition-colors"
           >
             View all services <ArrowRight className="ml-2" />

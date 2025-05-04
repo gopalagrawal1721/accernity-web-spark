@@ -63,7 +63,7 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold mb-1">Our Office</h4>
                   <p className="text-gray-600">
-                    4th Main, HSR Layout<br />
+                    HSR Layout<br />
                     Hosapalya, Bengaluru, Karnataka (560068)
                   </p>
                 </div>
@@ -73,7 +73,8 @@ const Contact = () => {
                 <Phone className="h-6 w-6 text-brand-blue mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Phone</h4>
-                  <p className="text-gray-600">(123) 456-7890</p>
+                  <p className="text-gray-600">8374672687</p>
+                  <p className="text-gray-600">8969912581</p>
                 </div>
               </div>
               
@@ -81,7 +82,8 @@ const Contact = () => {
                 <Mail className="h-6 w-6 text-brand-blue mr-4 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-semibold mb-1">Email</h4>
-                  <p className="text-gray-600">hello@accernity.com</p>
+                  <p className="text-gray-600">Chander@codencontent.com</p>
+                  <p className="text-gray-600">Gopal@codencontent.com</p>
                 </div>
               </div>
             </div>

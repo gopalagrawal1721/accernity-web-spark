@@ -4,25 +4,25 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    company: "TechStart Solutions",
+    name: "Umang Taneja",
+    company: "Nadi Astrology",
     position: "CEO",
-    quote: "Accernity transformed our online presence completely. Their team delivered a stunning website and implemented a marketing strategy that has doubled our leads within 3 months.",
-    image: "https://randomuser.me/api/portraits/women/45.jpg"
+    quote: "Working with the team has been a transformative experience for our online astrology platform. Their performance marketing strategies brought in a consistent flow of high-intent leads and significantly improved our online visibility. We've seen a 60% increase in consultations month-over-month. Truly grateful for their dedication and deep understanding of our niche!",
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=ExampleSeed03"
   },
   {
-    name: "David Chen",
-    company: "Innovative Retail",
-    position: "Marketing Director",
-    quote: "The SEO campaign Accernity developed for us exceeded all expectations. We're now ranking on the first page for all our key terms, and our organic traffic has never been higher.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
-  },
-  {
-    name: "Emily Parker",
-    company: "GrowFast Agency",
+    name: "Nirmal Daga",
+    company: "Bratma Crafts",
     position: "Founder",
-    quote: "Working with Accernity has been game-changing for our business. Their strategic approach to digital marketing has helped us reach new markets and achieve our growth targets.",
-    image: "https://randomuser.me/api/portraits/women/65.jpg"
+    quote: "We were struggling to get quality traffic that actually converted. After partnering for performance marketing, we saw a dramatic boost in ROI—our conversion rate doubled within the first two months! They really understood our audience and crafted campaigns that delivered real results. Highly recommended!",
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=ExampleSeed03"
+  },
+  {
+    name: "Bode Venkatraman",
+    company: "V & V Infra",
+    position: "Founder",
+    quote: "Performance marketing has completely changed the way we generate leads for our real estate projects. The campaigns were precise, well-targeted, and brought us qualified buyers consistently. Their data-driven approach helped us close more deals faster than ever before.",
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=ExampleSeed03"
   }
 ];
 

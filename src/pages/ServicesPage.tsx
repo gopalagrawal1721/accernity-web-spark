@@ -145,7 +145,8 @@ const ServicesPage = () => {
                 Comprehensive digital solutions tailored to help your business thrive in the online world.
               </p>
               <Button asChild className="gradient-bg text-white rounded-full py-6 px-8">
-                <Link to="/contact">
+                <Link to="/contact"     onClick={() => window.scrollTo(0, 0)}
+                >
                   Request a Free Consultation
                 </Link>
               </Button>
@@ -175,7 +176,8 @@ const ServicesPage = () => {
                     </ul>
                     
                     <Button asChild className="w-full gradient-bg text-white">
-                      <Link to="/contact">
+                      <Link to="/contact"     onClick={() => window.scrollTo(0, 0)}
+                      >
                         Get Started <ArrowRight className="ml-1 h-4 w-4" />
                       </Link>
                     </Button>
@@ -238,7 +240,8 @@ const ServicesPage = () => {
                 Contact us today to discuss your project and how we can help you achieve your digital goals.
               </p>
               <Button asChild className="bg-white text-brand-purple hover:bg-gray-100 text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all">
-                <Link to="/contact">
+                <Link to="/contact"  onClick={() => window.scrollTo(0, 0)}
+                >
                   Schedule a Consultation
                   <ArrowRight className="ml-2" size={18} />
                 </Link>

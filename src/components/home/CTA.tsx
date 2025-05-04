@@ -18,13 +18,13 @@ const CTA = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button asChild className="bg-white text-brand-purple hover:bg-gray-100 text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all">
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                 Get Started Today
                 <ArrowRight className="ml-2" size={18} />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="text-white border-white hover:bg-white/10 text-lg py-6 px-8 rounded-full">
-              <Link to="/services">
+            <Button asChild className="text-white border-white hover:bg-white/10 text-lg py-6 px-8 rounded-full">
+              <Link to="/services" onClick={() => window.scrollTo(0, 0)}>
                 Explore Our Services
               </Link>
             </Button>

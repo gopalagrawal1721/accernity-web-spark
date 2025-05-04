@@ -8,40 +8,16 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const team = [
   {
-    name: "Alex Johnson",
-    position: "CEO & Founder",
-    bio: "With over 15 years in digital marketing and web development, Alex leads our team with vision and expertise.",
-    image: "https://randomuser.me/api/portraits/men/32.jpg"
+    name: "Chander Shekhar",
+    position: "Founder",
+    bio: "With over 8 years in digital marketing and web development, Chander leads our team with vision and expertise.",
+    image: "https://api.dicebear.com/9.x/avataaars/svg?seed=boybot"
   },
   {
-    name: "Sarah Williams",
-    position: "Creative Director",
-    bio: "Sarah brings 10+ years of design experience, creating stunning visuals that captivate and convert.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg"
-  },
-  {
-    name: "Michael Chen",
-    position: "Technical Lead",
-    bio: "A seasoned developer with expertise in the latest web technologies and a passion for clean, efficient code.",
-    image: "https://randomuser.me/api/portraits/men/22.jpg"
-  },
-  {
-    name: "Jessica Miller",
-    position: "Marketing Strategist",
-    bio: "Jessica's data-driven approach to marketing has helped countless clients achieve remarkable growth.",
-    image: "https://randomuser.me/api/portraits/women/63.jpg"
-  },
-  {
-    name: "David Wilson",
-    position: "SEO Specialist",
-    bio: "David's deep understanding of search algorithms helps our clients dominate search rankings.",
-    image: "https://randomuser.me/api/portraits/men/78.jpg"
-  },
-  {
-    name: "Emma Thompson",
-    position: "Content Director",
-    bio: "Emma crafts compelling narratives that engage audiences and drive meaningful connections with brands.",
-    image: "https://randomuser.me/api/portraits/women/29.jpg"
+    name: "Gopal Agrawal",
+    position: "Founder",
+    bio: "A seasoned developer with expertise in the latest web technologies and a passion for clean, efficient code, brings 6+ years of design experience, creating stunning visuals that captivate and convert.",
+    image: " https://api.dicebear.com/9.x/avataaars/svg?seed=chandra"
   }
 ];
 
@@ -74,7 +50,7 @@ const AboutPage = () => {
           <div className="container mx-auto px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-display font-bold mb-6">
-                About <span className="gradient-text">Accernity</span>
+                About <span className="gradient-text">Code N Content</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8">
                 We're a team of digital experts passionate about helping businesses succeed online.
@@ -92,10 +68,10 @@ const AboutPage = () => {
                   Our <span className="gradient-text">Story</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Founded in 2013, Accernity began with a simple mission: to help businesses succeed in the digital world. What started as a small team of passionate digital marketers and web developers has grown into a full-service digital agency serving clients worldwide.
+                  Founded in 2023, Code N Content began with a simple mission: to help businesses succeed in the digital world. What started as a small team of passionate digital marketers and web developers has grown into a full-service digital agency serving clients worldwide.
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
-                  Over the years, we've helped hundreds of businesses transform their online presence, increase their visibility, and achieve significant growth through strategic digital marketing and innovative web solutions.
+                  Over the years, we've helped businesses transform their online presence, increase their visibility, and achieve significant growth through strategic digital marketing and innovative web solutions.
                 </p>
                 <p className="text-lg text-gray-600">
                   Today, we continue to evolve and adapt to the ever-changing digital landscape, staying at the forefront of industry trends and technologies to provide our clients with the most effective digital solutions.
@@ -106,7 +82,7 @@ const AboutPage = () => {
                 <div className="aspect-square bg-gradient-to-br from-brand-blue to-brand-purple rounded-2xl overflow-hidden shadow-xl">
                   <img 
                     src="https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" 
-                    alt="Accernity team" 
+                    alt="Code N Content team" 
                     className="w-full h-full object-cover mix-blend-overlay opacity-50"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -190,7 +166,7 @@ const AboutPage = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-                  Why Choose <span className="gradient-text">Accernity</span>
+                  Why Choose <span className="gradient-text">Code N Content</span>
                 </h2>
                 <p className="text-lg text-gray-600 mb-8">
                   When you partner with us, you get more than just a service provider. You get a dedicated team committed to your success.
@@ -220,7 +196,7 @@ const AboutPage = () => {
                 </div>
                 
                 <Button asChild className="gradient-bg text-white rounded-full py-6 px-8">
-                  <Link to="/contact">
+                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                     Get in Touch
                     <ArrowRight className="ml-2" size={18} />
                   </Link>
@@ -229,15 +205,15 @@ const AboutPage = () => {
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="text-4xl font-bold text-brand-blue mb-2">10+</div>
+                  <div className="text-4xl font-bold text-brand-blue mb-2">4+</div>
                   <p className="text-gray-700">Years of Experience</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="text-4xl font-bold text-brand-purple mb-2">500+</div>
+                  <div className="text-4xl font-bold text-brand-purple mb-2">20+</div>
                   <p className="text-gray-700">Projects Completed</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md">
-                  <div className="text-4xl font-bold text-brand-blue mb-2">250+</div>
+                  <div className="text-4xl font-bold text-brand-blue mb-2">25+</div>
                   <p className="text-gray-700">Happy Clients</p>
                 </div>
                 <div className="bg-white p-6 rounded-xl shadow-md">
@@ -261,7 +237,7 @@ const AboutPage = () => {
                 Contact us today to discuss how we can help your business grow with our digital marketing and web development expertise.
               </p>
               <Button asChild className="bg-white text-brand-purple hover:bg-gray-100 text-lg py-6 px-8 rounded-full shadow-lg hover:shadow-xl transition-all">
-                <Link to="/contact">
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                   Contact Us Today
                   <ArrowRight className="ml-2" size={18} />
                 </Link>
